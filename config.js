@@ -1,6 +1,8 @@
 const {Pool} = require('pg');
-
 const pgUrl = require('pg-database-url');
+
+
+var config = {};
 
 const dbConfig = {
     host: '192.168.99.100',
@@ -10,14 +12,6 @@ const dbConfig = {
     password: 'admin'
 };
 
-const connectionString = pgUrl(dbConfig);
+config.connectionString = pgUrl(dbConfig);
 
-const pool = new Pool({
-    connectionString: connectionString,
-});
-
-pool.query('select * from items', (err, res) => {
-    console.log(err, res);
-    pool.end()
-});
-
+module.exports = config;
