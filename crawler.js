@@ -12,18 +12,19 @@ var URL = require('url-parse')
 bzw. die USB Hubs
  */
 
-var pageToVisit = "https://www.reichelt.de/USB-Hubs/2/index.html?ACTION=2&LA=514&GROUPID=6906";
-console.log("Visiting page " + pageToVisit);
-request(pageToVisit, function(error, response, body) {
+var page_to_visit = "https://www.reichelt.de/USB-Hubs/2/index.html?ACTION=2&LA=514&GROUPID=6906";
+console.log("Besuchte Seite " + page_to_visit);
+request(page_to_visit, function(error, response, body) {
+    // Fehlermeldung falls es zu einem Error kommt
     if(error) {
         console.log("Error: " + error);
     }
-    // Check status code (200 is HTTP OK)
+    // Statuscode checken (200 -> HTTP OK)
     console.log("Status code: " + response.statusCode);
     if(response.statusCode === 200) {
         // Parsen des Body´s - speichern in Variable body_elements
         var body_elements = cheerio.load(body);
-        // title der Seite auslesen der in Variable $ gespeichert ist
+        // Titel der Seite auslesen der in der Variable body_elements gespeichert ist
         console.log("Seitentitel:  " + body_elements('title').text());
     }
 });
