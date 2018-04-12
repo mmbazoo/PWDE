@@ -31,15 +31,17 @@ request(page_to_visit, function(error, response, body) {
         // Titel der Seite auslesen der in der Variable body_elements gespeichert ist
         console.log("Seitentitel:  " + body_elements('title').text());
 
-        /* Preise sind in den <span> Tags - Engelhorn
-         */
+        // Preise sind in den <span> Tags - Engelhorn
 
-        /* Die Klaasen heißen unterschiedlich, daher nur so wenige
-        Man muss die HTML mal komplett durchgucken wie diese genau aufgebaut ist
-         */
+        /* Erster Versuch
         console.log(body_elements('span[class=price-standard]').text());
+         */
 
-        // Ausgabe ist noch in "komischer" Anordnung
-        console.log(body_elements('.product-price span').text());
+        /* Zweite Variante
+        Alle Preise - Leerzeichen und leere Zeilen sind entfernt
+         */
+        var prices = (body_elements('.product-price span').text());
+        var new_prices = prices.replace(/\s\s+/g, ' ');
+        console.log("Alle Preise: \n" + new_prices)
     }
 });
