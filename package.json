@@ -1,5 +1,5 @@
 {
-  "name": "untitled",
+  "name": "pwde",
   "version": "0.0.0",
   "description": "Webcrawler - Wir wenden den Crawler bei reichelt.de an.",
   "main": "crawler.js",
