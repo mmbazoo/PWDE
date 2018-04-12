@@ -8,8 +8,8 @@ var cheerio = require('cheerio');
 var URL = require('url-parse');
 
 
-/* Fetching reichelt.de
-bzw. die USB Hubs
+/* Fetching engelhorn.de
+bzw. die Kategorie Hemden
  */
 
 var page_to_visit = "http://www.engelhorn.de/fashion/herren/bekleidung/hemden";
@@ -31,9 +31,15 @@ request(page_to_visit, function(error, response, body) {
         // Titel der Seite auslesen der in der Variable body_elements gespeichert ist
         console.log("Seitentitel:  " + body_elements('title').text());
 
-        /* Preise sind in den <span> Tags
-        Jetzt geht es nur noch darum die Preismuster zu definieren und damit auszulesen
+        /* Preise sind in den <span> Tags - Engelhorn
          */
-        console.log(body_elements('span').text());
+
+        /* Die Klaasen heißen unterschiedlich, daher nur so wenige
+        Man muss die HTML mal komplett durchgucken wie diese genau aufgebaut ist
+         */
+        console.log(body_elements('span[class=price-standard]').text());
+
+        // Ausgabe ist noch in "komischer" Anordnung
+        console.log(body_elements('.product-price span').text());
     }
 });
