@@ -31,17 +31,28 @@ request(page_to_visit, function(error, response, body) {
         // Titel der Seite auslesen der in der Variable body_elements gespeichert ist
         console.log("Seitentitel:  " + body_elements('title').text());
 
-        // Preise sind in den <span> Tags - Engelhorn
 
-        /* Erster Versuch
-        console.log(body_elements('span[class=price-standard]').text());
+        /* Alle notwendigen Informationen werden nun abgefragt
+        Preise - Bezeichnungen - normale Preise - Sale Preise - Datum
          */
 
-        /* Zweite Variante
-        Alle Preise - Leerzeichen und leere Zeilen sind entfernt
-         */
+        // Alle Preise mit regex
         var prices = (body_elements('.product-price span').text());
-        var new_prices = prices.replace(/\s\s+/g, ' ');
-        console.log("Alle Preise: \n" + new_prices)
+        var prices_regex = prices.replace(/\s\s+/g, ' ');
+        console.log("Alle Preise: \n" + prices_regex)
+
+        // Alle Marken mit regex
+        var brands = (body_elements('.brand').text());
+        var brands_regex = brands.replace(/\s\s+/g, ' ');
+        console.log("Alle Marken: \n" + brands_regex)
+
+        // Alle Bezeichnungen mit regex
+        var names = (body_elements('.name-link').text());
+        var names_regex = names.replace(/\s\s+/g, ' ');
+        console.log("Alle Bezeichnungen: \n" + names_regex)
+
+        // Aktuelles Datum
+        var currentTime = new Date();
+        console.log("Heutiges Datum: \n:" + currentTime)
     }
 });
