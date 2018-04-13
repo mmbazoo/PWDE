@@ -43,17 +43,17 @@ request(page_to_visit, function(error, response, body) {
         // Alle Preise mit regex
         var prices = (body_elements('.product-price span').text());
         var prices_regex = prices.replace(/\s\s+/g, ' ');
-        console.log("Alle Preise: \n" + prices_regex)
+        console.log("Alle Preise: \n" + prices_regex);
 
         // Alle Marken mit regex
         var brands = (body_elements('.brand').text());
         var brands_regex = brands.replace(/\s\s+/g, ' ');
-        console.log("Alle Marken: \n" + brands_regex)
+        console.log("Alle Marken: \n" + brands_regex);
 
         // Alle Bezeichnungen mit regex
         var names = (body_elements('.name-link').text());
         var names_regex = names.replace(/\s\s+/g, ' ');
-        console.log("Alle Bezeichnungen: \n" + names_regex)
+        console.log("Alle Bezeichnungen: \n" + names_regex);
 
         // Aktuelles Datum
         console.log("Aktuelles Datum: " + external_functions.current_time());
