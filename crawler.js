@@ -1,3 +1,7 @@
+// external_functions.js einbinden
+const external_functions = require('./external_functions');
+
+
 /* request für HTTP requests -
 cheerio zum parsen der HTML Elemente -
 URL um URLs zu parsen
@@ -52,7 +56,6 @@ request(page_to_visit, function(error, response, body) {
         console.log("Alle Bezeichnungen: \n" + names_regex)
 
         // Aktuelles Datum
-        var currentTime = new Date();
-        console.log("Heutiges Datum: \n:" + currentTime)
+        console.log("Aktuelles Datum: " + external_functions.current_time());
     }
 });
