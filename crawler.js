@@ -34,6 +34,7 @@ request(page_to_visit, function(error, response, body) {
     // Titel der Seite auslesen der in der Variable body_elements gespeichert ist
     console.log("Seitentitel:  " + $('title').text());
 
+
     var products = []; // Leeren Array für ALLE Produkte anlegen
     $(".product-tile").each(function(){ // Funktion für jedes Produkt ausführen
       var product = []; // Leeren Array für EINZELNES Produkt anlegen
@@ -42,8 +43,9 @@ request(page_to_visit, function(error, response, body) {
       var product_price = $(this).find('div > div.product-information > div.product-price > span.price-sales').text().replace(/(\r\n\t|\n|\r\t)/gm,"");
       var product_brand = $(this).find('div > div.product-information > div.product-name > div.brand').text().replace(/(\r\n\t|\n|\r\t)/gm,"");
       var product_name = $(this).find('div > div.product-information > div.product-name > div.name > a').text().replace(/(\r\n\t|\n|\r\t)/gm,"");
+      var product_link = $(this).find('div > div.product-image > a').attr('href');
       var current_time = external_functions.current_time();
-      product.push(product_id, product_price, product_brand,product_name, current_time);
+      product.push(product_id, product_price, product_brand,product_name, current_time, product_link);
       products.push(product); // Produkt Array des einzelnen Produktes in Produkt Array aller Produkte pushen
     });
     console.log(products);
