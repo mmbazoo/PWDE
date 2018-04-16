@@ -1,5 +1,5 @@
 variables:
-  CONTAINER: "psmu_$produkt-webdata-extractor"
+  CONTAINER: "psmu_produkt-webdata-extractor"
   CONTAINER_PORT: "33333"
   VHOST_SUBDOMAIN: "pwde"
 
