@@ -1,6 +1,25 @@
-extends layout
+extends layout-new
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  div.row
+    div.col-xs-12
+      h1 Produkt 1
+    div.col-xs-12
+      img.img-responsive.img-product(src="https://docs.moodle.org/dev/images_dev/3/3d/line_chart.png")
+    div.col-xs-12
+      hr
+      br
+    div.col-xs-12
+      div.col-xs-2
+        p Leztze WOche: 39€
+      div.col-xs-3
+        b.text-danger +9€
+      div.col-xs-2
+        p Prozent.....
+    div.col-xs-12
+      div.col-xs-2
+        p Heute: 30€
+      div.col-xs-3
+        b.text-success -9€
+      div.col-xs-2
+        p +/- 18%
