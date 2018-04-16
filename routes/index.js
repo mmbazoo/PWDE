@@ -3,8 +3,8 @@ const router = express.Router();
 const pg = require('pg');
 const {Pool} = require('pg');
 const path = require('path');
-const config = require('../config')
-const connectionString = config.connectionString
+const config = require('../config');
+const connectionString = config.connectionString;
 
 const pool = new Pool({
     connectionString: connectionString,
