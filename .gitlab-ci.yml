@@ -1,0 +1,23 @@
+variables:
+  CONTAINER: "psmu_produkt-webdata-extractor"
+  CONTAINER_PORT: "33333"
+  VHOST_SUBDOMAIN: "pwde"
+
+stages:
+    - docker
+    - cleanup
+
+docker:
+  stage: docker
+  script:
+    - docker stop $CONTAINER || true && docker rm $CONTAINER || true
+    - docker image prune -f
+    - docker build -f Dockerfile -t $CONTAINER .
+    - docker run -d -p $CONTAINER_PORT:80 --name $CONTAINER -e VIRTUAL_HOST="psmu-"$VHOST_SUBDOMAIN".win.hs-heilbronn.de" $CONTAINER
+
+cleanup_on_fail:
+  stage: cleanup
+  script:
+    - docker stop $CONTAINER || true && docker rm $CONTAINER || true
+    - docker image prune -f
+  when: on_failure
