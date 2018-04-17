@@ -4,11 +4,10 @@ variables:
   VHOST_SUBDOMAIN: "pwde"
 
 stages:
-    "- setup_db"
     - docker
     - cleanup
 
-"setup_db:
+setup_db:
   stage: setup_db
   script:
     - docker pull postgres:latest || true
