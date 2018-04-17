@@ -7,12 +7,6 @@ stages:
     - docker
     - cleanup
 
-setup_db:
-  stage: setup_db
-  script:
-    - docker pull postgres:latest || true
-    - docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=admin -d postgres"
-
 docker:
   stage: docker
   script:
