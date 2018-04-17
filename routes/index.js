@@ -15,7 +15,7 @@ router.get('/', function (req, res) {
 
 /* Test Query */
 const query = {
-    text: 'INSERT INTO items(ID, text) VALUES($1, $2)',
+    text: 'INSERT INTO items(id, text) VALUES($1, $2)',
     values: ['2', 'brian.m.carlson@gmail.com'],
 };
 
