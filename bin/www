@@ -4,7 +4,8 @@
  * Module dependencies.
  */
 
-import create_db from '../database'
+const db = require('../database');
+
 
 var app = require('../app');
 var debug = require('debug')('untitled:server');
@@ -83,7 +84,7 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
-create_db();
+db.create_db();
 
 function onListening() {
   var addr = server.address();
