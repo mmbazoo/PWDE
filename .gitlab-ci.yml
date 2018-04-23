@@ -12,7 +12,8 @@ stages:
 check_db:
   stage: check_db
   script:
-    - docker inspect -f {{.State.Running}} postgres
+    - docker pull postgres:latest || true
+    - docker run --name postgres_pwde -p 5432:5432 -e POSTGRES_PASSWORD=admin -d postgres || true
 
 docker:
   stage: docker
@@ -27,6 +28,5 @@ cleanup_on_fail:
   script:
     - docker stop $CONTAINER || true && docker rm $CONTAINER || true
     - docker image prune -f
-    - docker pull postgres:latest || true
-    - docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=admin -d postgres
+
   when: on_failure
