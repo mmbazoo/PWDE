@@ -12,7 +12,7 @@ stages:
 check_db:
   stage: check_db
   script:
-    - docker inspect postgres
+    - docker inspect -f {{.State.Running}} postgres
 
 docker:
   stage: docker
