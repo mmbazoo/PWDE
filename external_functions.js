@@ -1,6 +1,7 @@
 module.exports = {
+
+    // Aktuelle Zeit - Parameter werden nicht benötigt
     current_time: function () {
-        var currentTime = new Date();
-        return currentTime
+        return (new Date).toISOString().replace('T', ' ').substr(0, 19);
     }
 }

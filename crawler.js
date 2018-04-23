@@ -13,8 +13,6 @@ var URL = require('url-parse');
 
 
 // Fetching engelhorn.de bzw. die Kategorie Hemden
-
-
 var page_to_visit = "http://www.engelhorn.de/fashion/herren/bekleidung/strickjacken";
 console.log("Besuchte Seite " + page_to_visit);
 request(page_to_visit, function(error, response, body) {
@@ -49,7 +47,6 @@ request(page_to_visit, function(error, response, body) {
       products.push(product); // Produkt Array des einzelnen Produktes in Produkt Array aller Produkte pushen
     });
     console.log(products);
-
 
   }
 });
