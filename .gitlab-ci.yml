@@ -5,6 +5,7 @@ variables:
 
 stages:
     - docker
+    - check_db
     - cleanup
 
 check_db:
