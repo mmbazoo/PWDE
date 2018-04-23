@@ -4,6 +4,8 @@
  * Module dependencies.
  */
 
+import create_db from '../database'
+
 var app = require('../app');
 var debug = require('debug')('untitled:server');
 var http = require('http');
@@ -81,6 +83,8 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
+create_db();
+
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
@@ -88,3 +92,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+
