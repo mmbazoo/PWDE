@@ -1,11 +1,10 @@
-const {Pool} = require('pg');
 const pgUrl = require('pg-database-url');
 
 
 const config = {};
 
 const dbConfig = {
-    host: '127.0.0.1',
+    host: '141.7.63.204',
     port: 5432,
     database: 'postgres',
     username: 'postgres',

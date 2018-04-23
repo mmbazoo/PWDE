@@ -1,21 +1,8 @@
 const {Pool} = require('pg');
-//const config = require('./config');
-//const connectionString = config.connectionString;
+const configfile = require('./config');
+const dbConfig=configfile
 
-const pgUrl = require('pg-database-url');
-
-const config = {};
-
-const dbConfig = {
-    host: '127.0.0.1',
-    port: 5432,
-    database: 'postgres',
-    username: 'postgres',
-    password: 'admin'
-};
-
-config.connectionString = pgUrl(dbConfig);
-const connectionString = config.connectionString;
+const connectionString = dbConfig.connectionString;
 
 module.exports = {
     create_db:function () {
@@ -49,7 +36,6 @@ module.exports = {
             console.log(err, res);
             pool.end()
         });
-        console.log("Die Funktion wurde aufgerufen und die Tabellen wurden hoffentlich erstellt");
     }
     };
 

@@ -83,6 +83,7 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
+//Datenbank auf CI-Server wird erstellt
 database.create_db();
 
 function onListening() {
