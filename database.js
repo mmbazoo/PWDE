@@ -49,7 +49,7 @@ module.exports = {
             console.log(err, res);
             pool.end()
         });
-        console.log("Die Funktion wurde aufgerufen");
+        console.log("Die Funktion wurde aufgerufen und die Tabellen wurden hoffentlich erstellt");
     }
     };
 
