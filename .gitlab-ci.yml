@@ -4,15 +4,15 @@ variables:
   VHOST_SUBDOMAIN: "pwde"
 
 stages:
-    - docker
+
     - check_db
+    - docker
     - cleanup
 
 check_db:
   stage: check_db
   script:
     - docker inspect postgres
-
 
 docker:
   stage: docker
