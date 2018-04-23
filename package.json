@@ -1,9 +1,9 @@
 {
   "name": "Data_Extraction",
   "version": "0.0.0",
-  "description": "Webcrawler - Wir wenden den Crawler bei reichelt.de an.",
+  "description": "Webcrawler - Wir wenden den Crawler bei engelhorn.de an.",
   "main": "crawler.js",
-  "author": "Crwaler Team",
+  "author": "Crawler Team",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
