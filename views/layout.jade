@@ -3,30 +3,51 @@ html
     head
         link(type="text/css", rel="stylesheet", media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
         link(type="text/css" rel="stylesheet" href="stylesheets/style.css")
-        title Web Data Extraction-Produktpreise
-
+        title my jade template
     body
         div.container
             div.row
                 div.col-xs-4
-                    img#logo.img-responsive(src="https://gitlab.win.hs-heilbronn.de/psmu/2018-ss/pwde/uploads/04da9785f083d22affff824de582544e/WRITING_101.png", height=100)
+                    img#logo.img-responsive(src="http://www.creationlogo.org/wp-content/uploads/2017/08/Logo_TV_2015.png", height=100)
+            nav.navbar.navbar-inverse
+                .container-fluid
+                    .navbar-header
+
+
+                    ul.nav.navbar-nav
+                        li.active
+                            a(href='index') Home
+
+                        li
+                            a(href='#') Page 1
+
+                        li
+                            a(href='#') Page 2
+
+                        li
+                            a(href='#') Page 3
+
+
+
+
+
+
             div.row
                 hr#separator
             div.row
                 block content
+    footer
+    p.container-fluid.text-center.text-md-left
+        .row
+            // First column
+            .col-md-6
 
-footer
-p.container-fluid.text-center.text-md-left
-    .row
-        // First column
-        .col-md-6
-
-        ul.nav.navbar-nav
-            li.active: a( href="impressum") Impressum
-                li: a( href="#the web team") The Web Team
-                p
-                    | PWDE <br>
-                    | &copy; 2018, All Rights Reserved
+            ul.nav.navbar-nav
+                li.active: a( href="impressum") Impressum
+                    li: a( href="#the web team") The Web Team
+                    p
+                        | PWDE <br>
+                        | &copy; 2018, All Rights Reserved
 
 
 
