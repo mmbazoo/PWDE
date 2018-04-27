@@ -1,12 +1,15 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-top: 50px;
+
 }
 
 a {
   color: #00B7FF;
 }
-
+.jumbotron {
+  background:url(../images/jumbotron-log.jpg) no-repeat;
+  color: white;
+}
 #logo {
   height: 70px;
 }
@@ -22,11 +25,12 @@ a {
 .text-right {
 
 }
-
-footer {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: floralwhite;
-  height: auto;
-
-
+footer{
+ background: #2b669a;
+ height: 30px;
+ text-align: left;
+ margin-top: 30px;
+ padding: 50px;
+ overflow: auto;
+ color: white;
 }

@@ -1,54 +1,35 @@
 doctype html
 html
     head
-        link(type="text/css", rel="stylesheet", media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
-        link(type="text/css" rel="stylesheet" href="stylesheets/style.css")
-        title my jade template
+        title Web Data extraction
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(href='stylesheets/bootstrap.css', rel='stylesheet')
+        link(href='stylesheets/styles.css', rel='stylesheet')
     body
-        div.container
-            div.row
-                div.col-xs-4
-                    img#logo.img-responsive(src="http://www.creationlogo.org/wp-content/uploads/2017/08/Logo_TV_2015.png", height=100)
-            nav.navbar.navbar-inverse
-                .container-fluid
-                    .navbar-header
-
-
+        nav.navbar.navbar-inverse.navbar-fixed-top
+            .container
+                .navbar-header
+                    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#') Web Data Extraction
+                #navbar.collapse.navbar-collapse
                     ul.nav.navbar-nav
                         li.active
-                            a(href='index') Home
-
+                            a(href='#') Home
                         li
-                            a(href='#') Page 1
-
+                            a(href='#about') About
                         li
-                            a(href='#') Page 2
+                            a(href='#contact') Contact
 
-                        li
-                            a(href='#') Page 3
-
-
-
-            div.row
-                hr#separator
-            div.row
-                block content
+    block content
     footer
-    p.container-fluid.text-center.text-md-left
-        .row
-            // First column
-            .col-md-6
-
-            ul.nav.navbar-nav
-                li.active: a( href="impressum") Impressum
-                    li: a( href="#the web team") The Web Team
-                    p
-                        | PWDE <br>
-                        | &copy; 2018, All Rights Reserved
-
-
-
-
-
+        p &copy; Web Data Extraction 2018, Some rights reserved.
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='javascripts/bootstrap.js')
 
 
