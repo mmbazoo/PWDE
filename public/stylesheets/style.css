@@ -27,14 +27,24 @@ a {
 }
 
 footer{
-  background: #2b669a;
-  height: 50px;
+  background: #2aabd2;
+  height: 20px;
   text-align: left;
   margin-top: 30px;
   padding: 50px;
   overflow: auto;
-  color:white;
+  /*color:white;*/
+  color:dodgerblue;
 
 }
 
+.footerV2 {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
 

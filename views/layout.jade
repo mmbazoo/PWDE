@@ -5,8 +5,9 @@ html
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1')
-        link(href='stylesheets/bootstrap.css', rel='stylesheet')
         link(href='stylesheets/styles.css', rel='stylesheet')
+        link(href='stylesheets/bootstrap.css', rel='stylesheet')
+
     body
         nav.navbar.navbar-inverse.navbar-fixed-top
             .container
@@ -34,7 +35,9 @@ html
                                 li(role='presentation')
                                     a(role='menuitem', tabindex='-1', href='seite2', target='_top') Seite2
     block content
-    nav.nav-footer
+    #MyFooter.footerV2
+        P Test of data
+        P Test of data New version
         ul
             li
                 | Copyright ©
@@ -44,6 +47,8 @@ html
                 a(href='contact') Contact
             li
                 a(href='impressum') Impressum
+
+        P Test of data bottom
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     script(src='javascripts/bootstrap.js')
 
