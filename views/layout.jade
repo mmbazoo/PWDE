@@ -19,12 +19,20 @@ html
                     a.navbar-brand(href='#') Web Data Extraction
                 #navbar.collapse.navbar-collapse
                     ul.nav.navbar-nav
-                        li.active
-                            a(href='#') Home
-                        li
-                            a(href='#home2') Home2
-                        li
-                            a(href='#home3') Home3
+                        li.dropdown
+                            a#drop1.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
+                                span.caret
+                                | Home
+                            ul.dropdown-menu.tab1(role='menu', aria-labelledby='drop1')
+                                li(role='presentation')
+                                    a(role='menuitem', tabindex='-1', href='seite1', target='_top') Seite1
+                        li.dropdown
+                            a#drop2.dropdown-toggle(href='#', role='button', data-toggle='dropdown')
+                                span.caret
+                                | Home2
+                            ul.dropdown-menu.tab2(role='menu', aria-labelledby='drop2')
+                                li(role='presentation')
+                                    a(role='menuitem', tabindex='-1', href='seite2', target='_top') Seite2
     block content
     nav.nav-footer
         ul
